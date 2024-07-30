@@ -1,15 +1,16 @@
 <?php
 
-namespace drlear\FleetTracking\Controllers;
+namespace Drlear\FleetTracking\Controllers;
 
 use Illuminate\Http\Request;
-use drlear\FleetTracking\Models\Fleet;
-use drlear\FleetTracking\Models\FleetParticipant;
-use drlear\Seat\Web\Controllers\Controller;
+use Drlear\FleetTracking\Models\Fleet;
+use Drlear\FleetTracking\Models\FleetParticipant;
+use Seat\Web\Http\Controllers\Controller;
+use Illuminate\Http\RedirectResponse;
 
 class FleetParticipantController extends Controller
 {
-    public function join(Request $request, Fleet $fleet)
+    public function join(Request $request, Fleet $fleet): RedirectResponse
     {
         $validatedData = $request->validate([
             'ship_type_id' => 'required|integer',
@@ -27,7 +28,7 @@ class FleetParticipantController extends Controller
             ->with('success', 'Joined the fleet successfully.');
     }
 
-    public function leave(Fleet $fleet)
+    public function leave(Fleet $fleet): RedirectResponse
     {
         $participant = $fleet->participants()
             ->where('character_id', auth()->user()->id)

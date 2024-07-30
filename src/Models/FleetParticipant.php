@@ -1,9 +1,10 @@
 <?php
 
-namespace drlear\FleetTracking\Models;
+namespace Drlear\FleetTracking\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use drlear\Seat\Web\Models\User;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Seat\Web\Models\User;
 
 class FleetParticipant extends Model
 {
@@ -17,12 +18,12 @@ class FleetParticipant extends Model
         'join_time', 'leave_time'
     ];
 
-    public function fleet()
+    public function fleet(): BelongsTo
     {
         return $this->belongsTo(Fleet::class);
     }
 
-    public function character()
+    public function character(): BelongsTo
     {
         return $this->belongsTo(User::class, 'character_id');
     }

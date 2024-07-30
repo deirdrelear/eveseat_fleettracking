@@ -1,34 +1,36 @@
 <?php
 
-namespace drlear\FleetTracking\Controllers;
+namespace Drlear\FleetTracking\Controllers;
 
 use Illuminate\Http\Request;
-use drlear\FleetTracking\Models\Fleet;
-use drlear\FleetTracking\Services\FleetService;
-use drlear\Seat\Web\Controllers\Controller;
+use Drlear\FleetTracking\Models\Fleet;
+use Drlear\FleetTracking\Services\FleetService;
+use Seat\Web\Http\Controllers\Controller;
+use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
 
 class FleetController extends Controller
 {
-    protected $fleetService;
+    protected FleetService $fleetService;
 
     public function __construct(FleetService $fleetService)
     {
         $this->fleetService = $fleetService;
     }
 
-    public function index()
+    public function index(): View
     {
         $fleets = Fleet::with('commander')->paginate(10);
         return view('fleettracking::fleet.index', compact('fleets'));
     }
 
-    public function create()
+    public function create(): View
     {
         $fcSquads = $this->fleetService->getFCSquads();
         return view('fleettracking::fleet.create', compact('fcSquads'));
     }
 
-    public function store(Request $request)
+    public function store(Request $request): RedirectResponse
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
@@ -46,19 +48,19 @@ class FleetController extends Controller
             ->with('success', 'Fleet created successfully.');
     }
 
-    public function show(Fleet $fleet)
+    public function show(Fleet $fleet): View
     {
         $fleet->load('commander', 'participants');
         return view('fleettracking::fleet.show', compact('fleet'));
     }
 
-    public function edit(Fleet $fleet)
+    public function edit(Fleet $fleet): View
     {
         $fcSquads = $this->fleetService->getFCSquads();
         return view('fleettracking::fleet.edit', compact('fleet', 'fcSquads'));
     }
 
-    public function update(Request $request, Fleet $fleet)
+    public function update(Request $request, Fleet $fleet): RedirectResponse
     {
         $validatedData = $request->validate([
             'name' => 'required|string|max:255',
@@ -76,7 +78,7 @@ class FleetController extends Controller
             ->with('success', 'Fleet updated successfully.');
     }
 
-    public function destroy(Fleet $fleet)
+    public function destroy(Fleet $fleet): RedirectResponse
     {
         $fleet->delete();
         return redirect()->route('fleettracking.fleet.index')

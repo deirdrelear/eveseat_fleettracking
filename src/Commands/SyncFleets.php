@@ -1,9 +1,9 @@
 <?php
 
-namespace drlear\FleetTracking\Commands;
+namespace Drlear\FleetTracking\Commands;
 
 use Illuminate\Console\Command;
-use drlear\FleetTracking\Services\FleetSyncService;
+use Drlear\FleetTracking\Services\FleetSyncService;
 
 class SyncFleets extends Command
 {
@@ -11,7 +11,7 @@ class SyncFleets extends Command
 
     protected $description = 'Synchronize fleet information from ESI';
 
-    private $fleetSyncService;
+    private FleetSyncService $fleetSyncService;
 
     public function __construct(FleetSyncService $fleetSyncService)
     {
@@ -19,7 +19,7 @@ class SyncFleets extends Command
         $this->fleetSyncService = $fleetSyncService;
     }
 
-    public function handle()
+    public function handle(): int
     {
         $this->info('Starting fleet synchronization...');
 
@@ -27,8 +27,10 @@ class SyncFleets extends Command
 
         if ($result) {
             $this->info('Fleet synchronization completed successfully.');
+            return Command::SUCCESS;
         } else {
             $this->error('Fleet synchronization failed.');
+            return Command::FAILURE;
         }
     }
 }

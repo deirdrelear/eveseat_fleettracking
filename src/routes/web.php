@@ -1,11 +1,11 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use drlear\FleetTracking\Controllers\FleetController;
-use drlear\FleetTracking\Controllers\FleetParticipantController;
+use Drlear\FleetTracking\Controllers\FleetController;
+use Drlear\FleetTracking\Controllers\FleetParticipantController;
 
 Route::group([
-    'namespace' => 'drlear\FleetTracking\Controllers',
+    'namespace' => 'Drlear\FleetTracking\Controllers',
     'middleware' => ['web', 'auth'],
     'prefix' => 'fleettracking',
 ], function () {

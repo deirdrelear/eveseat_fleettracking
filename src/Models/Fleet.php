@@ -1,9 +1,11 @@
 <?php
 
-namespace drlear\FleetTracking\Models;
+namespace Drlear\FleetTracking\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use drlear\Seat\Web\Models\User;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
+use Seat\Web\Models\User;
 
 class Fleet extends Model
 {
@@ -17,12 +19,12 @@ class Fleet extends Model
         'start_time', 'end_time'
     ];
 
-    public function commander()
+    public function commander(): BelongsTo
     {
         return $this->belongsTo(User::class, 'fc_id');
     }
 
-    public function participants()
+    public function participants(): HasMany
     {
         return $this->hasMany(FleetParticipant::class);
     }

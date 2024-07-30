@@ -4,9 +4,9 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFleetTrackingFleetsTable extends Migration
+return new class extends Migration
 {
-    public function up()
+    public function up(): void
     {
         Schema::create('fleet_tracking_fleets', function (Blueprint $table) {
             $table->id();
@@ -24,8 +24,8 @@ class CreateFleetTrackingFleetsTable extends Migration
         });
     }
 
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('fleet_tracking_fleets');
     }
-}
+};
