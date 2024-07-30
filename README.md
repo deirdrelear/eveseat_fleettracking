@@ -10,16 +10,6 @@ This plugin adds fleet tracking capabilities to EVE SeAT, allowing fleet command
 - Fleet participation tracking
 - Fleet statistics and reporting
 
-## Installation
-
-1. Require the plugin in your SeAT installation:
-composer require drlear/seat-fleet-tracking 
-2. Publish the configuration:
-php artisan vendor:publish --provider="drlear\FleetTracking\FleetTrackingServiceProvider" --tag=config 
-3. Run the migrations: 
-php artisan migrate 
-4. Update your SeAT configuration to include the necessary ESI scopes.
-
 ## Configuration
 
 Edit the `config/fleettracking.php` file to set up your ESI client details and other plugin options.
