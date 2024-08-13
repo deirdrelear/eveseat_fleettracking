@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4": {
-            "drlear\\Seat\\FleetTracking\\": "src/"
+            "Deirdrelear\\Seat\\FleetTracking\\": "src/"
         }
     },
     "extra": {
