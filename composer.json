@@ -1,20 +1,22 @@
 {
-    "name": "drlear/seat-fleet-tracking",
+    "name": "deirdrelear/eveseat_fleettracking",
     "description": "Fleet tracking plugin for EVE SeAT",
     "type": "seat-plugin",
     "license": "MIT",
     "authors": [
         {
-            "name": "DrLear",
-            "email": "drlear@drlear.com"
+            "name": "deirdrelear",
+            "email": "dairalir.a1one@gmail.com"
         }
     ],
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
         "php": "^8.2",
-        "laravel/framework": "^11.0",
-        "eveseat/web": "^5.0"
+        "laravel/framework": "^10.0",
+        "eveseat/web": "^5.0",
+        "eveseat/eveapi": "^5.0",
+        "eveseat/services": "^5.0.1"
     },
     "autoload": {
         "psr-4": {
@@ -24,7 +26,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "drlear\\FleetTracking\\FleetTrackingServiceProvider"
+                "deirdrelear\\FleetTracking\\FleetTrackingServiceProvider"
             ]
         }
     }

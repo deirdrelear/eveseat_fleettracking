@@ -1,10 +1,10 @@
 <?php
 
-namespace drlear\FleetTracking\Services;
+namespace Deirdrelear\Seat\FleetTracking\Services;
 
-use drlear\Seat\Web\Models\Squad;
-use drlear\FleetTracking\Models\Fleet;
-use drlear\FleetTracking\Services\ESIService;
+use Seat\Web\Models\Squad;
+use Deirdrelear\Seat\FleetTracking\Models\Fleet;
+use Deirdrelear\Seat\FleetTracking\Services\ESIService;
 
 class FleetService
 {

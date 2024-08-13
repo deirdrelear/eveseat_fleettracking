@@ -1,9 +1,9 @@
 <?php
 
-namespace drlear\FleetTracking\Services;
+namespace Deirdrelear\Seat\FleetTracking\Services;
 
-use drlear\FleetTracking\Models\Fleet;
-use drlear\Seat\Web\Models\User;
+use Deirdrelear\Seat\FleetTracking\Models\Fleet;
+use Seat\Web\Models\User;
 
 class FleetSyncService
 {

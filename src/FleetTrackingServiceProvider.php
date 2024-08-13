@@ -1,10 +1,10 @@
 <?php
 
-namespace Drlear\FleetTracking;
+namespace Deirdrelear\Seat\FleetTracking;
 
 use Illuminate\Support\ServiceProvider;
-use Drlear\FleetTracking\Commands\SyncFleets;
-use Drlear\FleetTracking\Services\ESIService;
+use Deirdrelear\Seat\FleetTracking\Commands\SyncFleets;
+use Deirdrelear\Seat\FleetTracking\Services\ESIService;
 use Seat\Services\AbstractSeatPlugin;
 
 class FleetTrackingServiceProvider extends AbstractSeatPlugin
@@ -67,16 +67,16 @@ class FleetTrackingServiceProvider extends AbstractSeatPlugin
 
     public function getPackageRepositoryUrl(): string
     {
-        return 'https://github.com/deirdrelear/seat-fleet-tracking';
+        return 'https://github.com/deirdrelear/eveseat_fleettracking';
     }
 
     public function getPackagistPackageName(): string
     {
-        return 'drlear/seat-fleet-tracking';
+        return 'deirdrelear/eveseat_fleettracking';
     }
 
     public function getPackagistVendorName(): string
     {
-        return 'drlear';
+        return 'deirdrelear';
     }
 }

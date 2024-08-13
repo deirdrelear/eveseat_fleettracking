@@ -1,6 +1,6 @@
 <?php
 
-namespace drlear\FleetTracking\Services;
+namespace Deirdrelear\Seat\FleetTracking\Services;
 
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;

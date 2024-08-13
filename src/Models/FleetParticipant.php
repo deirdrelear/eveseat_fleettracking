@@ -1,6 +1,6 @@
 <?php
 
-namespace Drlear\FleetTracking\Models;
+namespace Deirdrelear\Seat\FleetTracking\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;

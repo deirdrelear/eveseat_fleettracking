@@ -1,10 +1,10 @@
 <?php
 
-namespace Drlear\FleetTracking\Controllers;
+namespace Deirdrelear\Seat\FleetTracking\Controllers;
 
 use Illuminate\Http\Request;
-use Drlear\FleetTracking\Models\Fleet;
-use Drlear\FleetTracking\Services\FleetService;
+use Deirdrelear\Seat\FleetTracking\Models\Fleet;
+use Deirdrelear\Seat\FleetTracking\Services\FleetService;
 use Seat\Web\Http\Controllers\Controller;
 use Illuminate\View\View;
 use Illuminate\Http\RedirectResponse;

@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Drlear\FleetTracking\Controllers\FleetController;
-use Drlear\FleetTracking\Controllers\FleetParticipantController;
+use Deirdrelear\Seat\FleetTracking\Controllers\FleetController;
+use Deirdrelear\Seat\FleetTracking\Controllers\FleetParticipantController;
 
 Route::group([
     'namespace' => 'Drlear\FleetTracking\Controllers',

@@ -1,9 +1,9 @@
 <?php
 
-namespace Drlear\FleetTracking\Commands;
+namespace Deirdrelear\Seat\FleetTracking\Commands;
 
 use Illuminate\Console\Command;
-use Drlear\FleetTracking\Services\FleetSyncService;
+use Deirdrelear\Seat\FleetTracking\Services\FleetSyncService;
 
 class SyncFleets extends Command
 {
