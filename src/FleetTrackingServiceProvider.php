@@ -20,7 +20,7 @@ class FleetTrackingServiceProvider extends AbstractSeatPlugin
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/fleettracking.php', 'fleettracking');
+        $this->mergeConfigFrom(__DIR__ . '/config/fleettracking.php', 'fleettracking');
 
         $this->app->singleton(ESIService::class, function ($app) {
             return new ESIService(
@@ -42,22 +42,22 @@ class FleetTrackingServiceProvider extends AbstractSeatPlugin
 
     private function addRoutes()
     {
-        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
+        $this->loadRoutesFrom(__DIR__ . '/routes/web.php');
     }
 
     private function addViews()
     {
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'fleettracking');
+        $this->loadViewsFrom(__DIR__ . '/resources/views', 'fleettracking');
     }
 
     private function addTranslations()
     {
-        $this->loadTranslationsFrom(__DIR__ . '/../resources/lang', 'fleettracking');
+        $this->loadTranslationsFrom(__DIR__ . '/resources/lang', 'fleettracking');
     }
 
     private function addMigrations()
     {
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__ . '/database/migrations');
     }
 
     public function getName(): string
