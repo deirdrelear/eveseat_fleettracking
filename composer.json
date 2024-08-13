@@ -20,13 +20,13 @@
     },
     "autoload": {
         "psr-4": {
-            "drlear\\FleetTracking\\": "src/"
+            "drlear\\Seat\\FleetTracking\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "deirdrelear\\FleetTracking\\FleetTrackingServiceProvider"
+                "Deirdrelear\\Seat\\FleetTracking\\FleetTrackingServiceProvider"
             ]
         }
     }
